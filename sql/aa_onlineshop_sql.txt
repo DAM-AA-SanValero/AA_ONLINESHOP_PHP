@@ -1,0 +1,47 @@
+CREATE DATABASE aa_onlineshop;
+USE aa_onlineshop;
+
+CREATE TABLE users(
+user_id INT(9) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(50) NOT NULL,
+surname VARCHAR(50) NOT NULL,
+email VARCHAR(100) NOT NULL UNIQUE,
+password VARCHAR(255) NOT NULL,
+role ENUM('administrator','user') NOT NULL DEFAULT 'user'
+);
+
+INSERT INTO users (user_id, name, surname, email, password, role) VALUE (1, 'admin', 'admin', 'admin@admin.com', '$2y$10$FOiGrq0QV2i.Nnq1m.wcLuZOoRCXuoR6iXcgSXUPtCOsFilH1fegm', 'administrator');
+INSERT INTO users (user_id, name, surname, email, password, role) VALUE (2, 'user', 'user', 'user@user.com', '$2y$10$cqg1qH/0/nWpfktsD9jOKuVMCV/KVIBryD5aldehS0agSGI6F1BQa', 'user');
+
+CREATE TABLE categories(
+category_id INT (9) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(100) NOT NULL,
+description VARCHAR(255)
+);
+
+INSERT INTO categories (category_id, name, description) VALUE (1, "Consolas", "Consolas construidas con un hardware diferente para simular un aspecto retro con un diseño moderno");
+
+CREATE TABLE products(
+product_id INT(9) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+category_id INT(9) NOT NULL,
+name VARCHAR(100) NOT NULL,
+description VARCHAR(255),
+price DECIMAL (10,2) NOT NULL,
+register_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+stock TINYINT UNSIGNED DEFAULT 1,
+FOREIGN KEY (category_id) REFERENCES categories(category_id)
+);
+
+INSERT INTO products(product_id, category_id, name, description, price) VALUES (1,1,"Anbernic GameBoy Style", "Consola emuladora de varias consolas retro con aspecto de GameBoy", 149.99);
+
+CREATE TABLE sales(
+sale_id INT(9) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+user_id INT(9) NOT NULL,
+product_id INT(9) NOT NULL,
+sale_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+amount DECIMAL (10,2),
+FOREIGN KEY (user_id) REFERENCES users(user_id),
+FOREIGN KEY (product_id) REFERENCES products(product_id)
+);
+
+INSERT INTO sales (sale_id, user_id, product_id, amount) VALUES (1,1,1, 149.99);
