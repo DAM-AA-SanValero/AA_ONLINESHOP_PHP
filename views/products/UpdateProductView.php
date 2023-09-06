@@ -29,7 +29,6 @@ if (isset($_GET['id'])) {
     <form action="functions/UpdateProductProcess.php" name="formulario" method="POST">
         <h1>UPDATE A PRODUCT</h1>
 
-        <!-- Hidden input for product_id -->
         <input type="hidden" name="product_id" value="<?php echo $product['product_id']; ?>">
 
         <label>Product:</label>

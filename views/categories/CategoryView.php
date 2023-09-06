@@ -52,7 +52,8 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
                         <div class="functionsId">
                             <a href="views/categories/UpdateCategoryView.php?id=<?php echo $field['category_id']; ?>">
                                 <img class="icon" src="assets/images/edit.png" alt="Edit"></a>
-                            <a href="functions/DeleteCategoryProcess.php?id=<?php echo $field['category_id'];?>"><img class="icon" src="assets/images/delete.png" alt="Delete"></a>
+                            <a href="functions/DeleteCategoryProcess.php?id=<?php echo $field['category_id'];?>">
+                                <img class="icon" src="assets/images/delete.png" alt="Delete"></a>
                         </div>
 
                         </div>

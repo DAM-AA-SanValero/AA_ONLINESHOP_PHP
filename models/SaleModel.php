@@ -56,7 +56,7 @@ class SaleModel{
             $statement = $this->connection->prepare("DELETE FROM sales WHERE sale_id = ?");
             return $statement->execute([$sale_id]);
         } catch (PDOException $e) {
-            error_log('Error al borrar producto: ' . $e->getMessage());
+            error_log('Error al borrar la venta: ' . $e->getMessage());
             throw $e;
         }
     }

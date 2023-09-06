@@ -22,12 +22,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header('Location: ../views/products/ProductView.php');
                 exit();
             } else {
-                // Aquí podrías redirigir al formulario con un mensaje de error
                 header('Location: ../views/products/RegisterProductView.php?error=Error al registrar el producto');
                 exit();
             }
         } catch (Exception $e) {
-            // Aquí podrías redirigir al formulario con un mensaje de error más específico
             header('Location: ../views/products/RegisterProductView.php?error=' . urlencode($e->getMessage()));
             exit();
         }

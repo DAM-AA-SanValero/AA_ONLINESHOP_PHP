@@ -16,7 +16,7 @@ class SaleController{
         try {
             return $this->saleModel->getSalesById($id);
         } catch (Exception $e) {
-            error_log('Error al obtener producto: ' . $e->getMessage());
+            error_log('Error al obtener venta: ' . $e->getMessage());
             throw $e;
         }
     }

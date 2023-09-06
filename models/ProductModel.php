@@ -35,7 +35,7 @@ class ProductModel {
             return $statement->execute([$name, $category_id, $description, $price, $register_date, $stock]);
         } catch (PDOException $e) {
             error_log('Error al agregar producto: ' . $e->getMessage());
-            throw $e; // re-lanza la excepción para manejarla en el controlador
+            throw $e;
         }
     }
 

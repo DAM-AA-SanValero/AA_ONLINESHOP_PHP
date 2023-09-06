@@ -35,7 +35,6 @@ class CategoryModel{
             $statement = $this->connection->prepare("INSERT INTO categories (name, description) VALUES (?, ?)");
             return $statement->execute([$name, $description]);
         } catch (PDOException $e) {
-            // Aquí podrías registrar el error en lugar de detener la ejecución
             error_log('Error al agregar categoría: ' . $e->getMessage());
             return false;
         }

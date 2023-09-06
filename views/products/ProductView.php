@@ -63,7 +63,8 @@ $products = $statement->fetchAll(PDO::FETCH_ASSOC);
                         <div class="functionsId">
                             <a href="views/products/UpdateProductView.php?id=<?php echo $field['product_id']; ?>">
                                 <img class="icon" src="assets/images/edit.png" alt="Edit"></a>
-                            <a href="functions/DeleteProductProcess.php?id=<?php echo $field['product_id'];?>"><img class="icon" src="assets/images/delete.png" alt="Delete"></a>
+                            <a href="functions/DeleteProductProcess.php?id=<?php echo $field['product_id'];?>">
+                                <img class="icon" src="assets/images/delete.png" alt="Delete"></a>
                         </div>
                         </div>
 

@@ -10,7 +10,7 @@ try {
 
         if ($controller->addCategory($name, $description)) {
             header("Location: ../views/categories/CategoryView.php");
-            exit(); // Es recomendable llamar a exit() después de header().
+            exit();
         } else {
             echo "Error al registrar la categoría.";
         }
@@ -18,7 +18,6 @@ try {
         echo "Todos los campos son requeridos.";
     }
 } catch (Exception $e) {
-    // Manejo de la excepción
     error_log("Un error ocurrió en el proceso de registro: " . $e->getMessage());
     echo "Ocurrió un error al tratar de registrar la categoría. Por favor, inténtelo de nuevo más tarde.";
 }

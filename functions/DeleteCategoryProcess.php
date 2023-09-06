@@ -8,7 +8,7 @@ try {
 
         if ($controller->deleteCategory($id)) {
             header("Location: ../views/categories/CategoryView.php");
-            exit(); // Es recomendable llamar a exit() después de header().
+            exit();
         } else {
             echo "Error al eliminar la categoría.";
         }
@@ -16,7 +16,6 @@ try {
         echo "ID no proporcionado.";
     }
 } catch (Exception $e) {
-    // Manejo de la excepción
     error_log("Un error ocurrió en el proceso de eliminación: " . $e->getMessage());
     echo "Ocurrió un error al tratar de eliminar la categoría. Por favor, inténtelo de nuevo más tarde.";
 }
