@@ -1,12 +1,13 @@
 # AA_ONLINESHOP_PHP
-Actividad de Aprendizaje de una tienda online para la entrega en septiembre
+Actividad de Aprendizaje de la asignatura Desarrollo de Interfaces
+**TIENDA ONLINE**
 
 Se ha realizado un prototipo de tienda online retro en el cual 
 hay varios puntos que se han tenido en cuenta durante el desarrollo del proyecto.
 
 El proyecto contiene 4 entidades o tablas:
 
-* Client: Clientes que estan registrados en la plataforma
+* Client: Clientes que están registrados en la plataforma
 * Product: Los productos que se encuentran,o no, en la tienda online
 * Category: Indica los productos por un tipo específico
 * Sale: las ventas realizadas en la tienda
